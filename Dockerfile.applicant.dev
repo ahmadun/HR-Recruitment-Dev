@@ -1,0 +1,12 @@
+FROM node:alpine AS build
+
+WORKDIR /build-applicant
+
+COPY /build-applicant/package*.json .
+
+RUN npm install --legacy-peer-deps
+
+COPY /build-applicant .
+
+
+CMD ["npm", "start"]
