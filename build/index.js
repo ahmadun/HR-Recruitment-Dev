@@ -11,23 +11,23 @@ const __dirname = path.dirname(__filename);
 
 config();
 
-import applicationRouter from "./routes/application.router.js";
-import applicantRouter from "./routes/applicant.router.js";
-import documentRouter from "./routes/document.router.js";
-import interviewerRouter from "./routes/interviewer.router.js";
-import jobRouter from "./routes/job.router.js";
-import sectionRouter from "./routes/section.router.js";
-import selectionRouter from "./routes/selection.router.js";
-import userRouter from "./routes/user.router.js";
-import runningTextRouter from "./routes/runningText.router.js";
-import certificationRouter from "./routes/certification.router.js";
-import majorRouter from "./routes/major.router.js";
-import skillRouter from "./routes/skill.router.js";
-import universityRouter from "./routes/university.router.js";
+import applicationRouter from "./src/routes/application.router.js";
+import applicantRouter from "./src/routes/applicant.router.js";
+import documentRouter from "./src/routes/document.router.js";
+import interviewerRouter from "./src/routes/interviewer.router.js";
+import jobRouter from "./src/routes/job.router.js";
+import sectionRouter from "./src/routes/section.router.js";
+import selectionRouter from "./src/routes/selection.router.js";
+import userRouter from "./src/routes/user.router.js";
+import runningTextRouter from "./src/routes/runningText.router.js";
+import certificationRouter from "./src/routes/certification.router.js";
+import majorRouter from "./src/routes/major.router.js";
+import skillRouter from "./src/routes/skill.router.js";
+import universityRouter from "./src/routes/university.router.js";
 
-import { verifyToken } from "./middleware/auth.js";
+import { verifyToken } from "./src/middleware/auth.js";
 
-import db from "./config/db.js";
+import db from "./src/config/db.js";
 db.authenticate()
   .then(() => {
     console.log("Connection Successfully");

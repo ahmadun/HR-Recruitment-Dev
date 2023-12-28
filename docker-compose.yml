@@ -26,17 +26,12 @@ services:
         command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm start'
         ports:
             - "8000:8000"
-    app-applicant:
-        build:
-            context: .
-            dockerfile: Dockerfile.applicant.dev
-        ports:
-            - "3000:3000"
-        volumes:
-            - ./build-applicant:/build-applicant
-            - node_modules:/build-applicant/node_modules/
-volumes:
-    node_modules:
+    # app-applicant:
+    #     build:
+    #         context: .
+    #         dockerfile: Dockerfile.applicant
+    #     ports:
+    #         - "3000:3000"
     # app-admin:
     #     build:
     #         context: .
