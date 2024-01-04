@@ -9,3 +9,12 @@ docker cp index.js app-recruitment-api:/usr/src/app
 
 
 docker cp build hr-reqruitment-app-applicant-1:/usr/share/nginx/html
+
+
+[mysqld]
+
+sql-mode=""
+
+docker cp f5d59da5387a:/etc/mysql/my.cnf ./
+
+docker cp my.cnf f5d59da5387a:/etc/mysql

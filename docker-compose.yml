@@ -2,7 +2,7 @@ version: '3.8'
 services:
     db:
         container_name: db-recruitment-mariadb
-        image: mariadb
+        image: mariadb:10.4.28
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         expose:
@@ -26,15 +26,15 @@ services:
         command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm start'
         ports:
             - "8000:8000"
-    # app-applicant:
-    #     build:
-    #         context: .
-    #         dockerfile: Dockerfile.applicant
-    #     ports:
-    #         - "3000:3000"
-    # app-admin:
-    #     build:
-    #         context: .
-    #         dockerfile: Dockerfile.admin
-    #     ports:
-    #         - "8082:80"
+    app-applicant:
+        build:
+            context: .
+            dockerfile: Dockerfile.applicant
+        ports:
+            - "8081:80"
+    app-admin:
+        build:
+            context: .
+            dockerfile: Dockerfile.admin
+        ports:
+            - "8082:80"
